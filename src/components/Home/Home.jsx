@@ -28,6 +28,7 @@ export default function Home() {
   const classes = useStyles();
 
   return (
+   
     <Container className={classes.background}>
       <div className={classes.content}>
         <Typography variant="h3" gutterBottom>
@@ -41,5 +42,6 @@ export default function Home() {
         </Typography>
       </div>
     </Container>
+    
   );
 }
