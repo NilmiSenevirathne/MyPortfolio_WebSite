@@ -1,0 +1,192 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh !important;
+    text-align: center;
+    min-height: 670px;
+    background-image: url('../../../assets//home/bng.avif');
+    
+}
+
+.profile-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: aliceblue;
+}
+
+.profile-details-name{
+    font: size 24px; ;
+    font-family: "Poppins-SemiBold";
+
+}
+
+.profile-details-role {
+    display:'flex';
+    flex-direction: column;
+    margin: 14px 0 24px 0;
+   
+}
+
+.profile-details-role h1{
+    font-family: 40px;
+    font-family: "cursive";
+}
+
+.primary-text{
+    color: (--white);
+}
+
+.highlighted-text{
+    color: var(--dark-orange);
+}
+
+.profile-role-tagline {
+    font-size: 19px;
+    margin: 5px 0 0 0;
+    font-family: "Poppins Light";
+}
+
+.profile-options {
+    margin-top: 20px;
+}
+
+/* Fixed Button Colors */
+.profile-options .btn {
+    padding: 14px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    font-family: "Poppins SemiBold";
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Primary Button */
+.profile-options .primary-btn {
+    background-color: #ff9800 !important;
+    color: white !important;
+    border: 2px solid transparent;
+}
+
+.profile-options .primary-btn:hover {
+    background-color: #e68900 !important;
+    border-color: #ff9800;
+}
+
+/* Highlighted Button */
+.profile-options .highlighted-btn {
+    background-color: rgb(60, 151, 216) !important;
+    color: white !important;
+    margin: 0 0 0 28px;
+    border: 2px solid #ff9800; /* Optional border for visibility */
+ }
+ 
+ /* Fix the hover selector */
+ .profile-options .highlighted-btn:hover {
+     background-color: rgb(60, 151, 216)!important; /* A slightly darker shade for hover effect */
+     color: #111 !important;
+ }
+
+.profile-picture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 0px 0px var(--white);
+    border-radius: 50%;
+    height: 380px;
+    width: 380px;
+    margin: 0 0px 0 100px;
+
+}
+
+.profile-picture-background{
+    height: 92%;
+    width: 92%;
+    background-image: url('../../../assets//home/ID\ photo.JPG');
+    background-size:cover;
+    background-position: center;
+    border-radius: 50%; /* Makes it circular */
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.profile-picture-background:hover{
+    transform:scale(1.07);
+    transition: ls ease-out;
+}
+
+.colz .colz-icon {
+    display: flex;
+    gap: 10px; /* Add spacing between icons */
+    align-items: center; 
+}
+
+.colz .colz-icon i {
+    font-size: 24px;  /* Ensure the icons have a visible size */
+    transition: transform 0.3s ease-in-out; /* Enable smooth scaling */
+}
+
+.colz .colz-icon i:hover {
+    transform: scale(1.5);
+}
+
+@media screen and (max-width: 1110px){
+    .profile-picture{
+        margin: 0 0px 0 80px;
+
+    }
+
+    .profile-details-name{
+        font-size: 20px;
+    }
+
+    .profile-details-role .primary-text{
+        font-size: 12px;
+    }
+
+    .profile-options .btn{
+        width: 120px;
+        padding: 11px 0;
+        z-index: 700;
+    }
+}
+
+@media screen and (max-width: 910px){
+    .profile-picture{
+        height: 320px;
+        width: 320px;
+        margin: 0 0 0 4px;
+    }
+}
+
+@media screen and (max-width: 810px){
+    .profile-picture{
+        margin: 0 !important;
+    }
+
+    .profile-parent{
+        flex-direction: column-reverse;
+        margin: 40px 0 0 0;
+    }
+
+    .profile-options{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .profile-details{
+        margin: 25px 0 0;
+
+    }
+
+    .profile-options .highlighted-btn{
+        margin: 0 !important;
+    }
+
+    .profile-options , .profile-details-role{
+        text-align: center;
+    }
+}
