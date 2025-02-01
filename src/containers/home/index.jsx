@@ -1,10 +1,11 @@
 import React from "react";
 
+
 const Home=()=>{
 
     return(
         <div>
-            About page
+            Home page
         </div>
     )
 }
