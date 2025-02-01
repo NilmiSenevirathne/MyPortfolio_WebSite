@@ -4,7 +4,7 @@ const Skills=()=>{
 
     return(
         <div>
-            About page
+            Skills page
         </div>
     )
 }
