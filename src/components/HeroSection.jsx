@@ -24,16 +24,16 @@ const HeroSection = () => {
           position: "absolute",
           top: 0,
           left: 0,
-          width: "100%",
-          height: "100%",
+          width: "150%",
+          height: "150%",
           background: "url('/images/bg1.jpg') center/cover no-repeat",
-          filter: "blur(1px)", // Adjust the blur intensity
+          filter: "blur(2px)", // Adjust the blur intensity
           zIndex: -1,
         }}
       />
         <Avatar
           src="/images/ID photo.JPG"
-          sx={{ width: 120, height: 120, mb: 2, border: "3px solid white" }}
+          sx={{ width: 150, height: 150, mb: 2, border: "3px solid white" }}
         />
         <Typography variant="h2" fontWeight="bold">
           Ama Senevirathne
