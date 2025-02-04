@@ -7,7 +7,7 @@ const HeroSection = () => {
         
         <Box
         sx={{
-          position: "relative",
+          position: " ",
           height: "80vh",
           display: "flex",
           flexDirection: "column",
@@ -24,8 +24,8 @@ const HeroSection = () => {
           position: "absolute",
           top: 0,
           left: 0,
-          width: "150%",
-          height: "150%",
+          width: "100%",
+          height: "100%",
           background: "url('/images/bg1.jpg') center/cover no-repeat",
           filter: "blur(2px)", // Adjust the blur intensity
           zIndex: -1,
