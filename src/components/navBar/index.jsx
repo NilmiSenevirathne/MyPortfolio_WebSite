@@ -1,54 +1,46 @@
-import React, { useState } from "react";
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
-
-  const handleToggleDrawer = () => {
-    setOpenDrawer(!openDrawer);
-  };
-
-  const navLinks = ["Home", "About Me", "Services", "Portfolio", "Contact Me"];
+  const handleToggleDrawer = () => setOpenDrawer(!openDrawer);
 
   return (
     <>
-      <AppBar position="sticky" sx={{ background: "#1c1c1c", boxShadow: "none" }}>
+      <AppBar position="sticky" sx={{ background: "#1c1c1c" }}>
         <Toolbar>
-          {/* Logo / Title */}
           <Typography variant="h5" sx={{ flexGrow: 1, fontWeight: "bold" }}>
             Ama Senevirathne | Portfolio
           </Typography>
 
-          {/* Desktop Navigation Buttons */}
+          {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            {navLinks.map((text, index) => (
-              <Button key={index} color="inherit" sx={{ fontSize: "1.5rem", mx: 1.5 }}>
-                {text}
-              </Button>
-            ))}
+            <Button component={Link} to="/" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>Home</Button>
+            <Button component={Link} to="/about" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>About Me</Button>
+            <Button component={Link} to="/resume" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>Resume</Button>
           </Box>
 
-          {/* Mobile Menu Toggle Button */}
-          <IconButton
-            color="inherit"
-            edge="end"
-            sx={{ display: { xs: "block", md: "none" } }}
-            onClick={handleToggleDrawer}
-          >
+          {/* Mobile Menu Button */}
+          <IconButton color="inherit" sx={{ display: { xs: "block", md: "none" } }} onClick={handleToggleDrawer}>
             <MenuIcon fontSize="large" />
           </IconButton>
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Drawer */}
       <Drawer anchor="right" open={openDrawer} onClose={handleToggleDrawer}>
         <List sx={{ width: 250, background: "#1c1c1c", height: "100vh", color: "white" }}>
-          {navLinks.map((text, index) => (
-            <ListItem button key={index} onClick={handleToggleDrawer} sx={{ textAlign: "center" }}>
-              <ListItemText primary={text} sx={{ fontSize: "1.2rem", fontWeight: "bold" }} />
-            </ListItem>
-          ))}
+          <ListItem button component={Link} to="/" onClick={handleToggleDrawer}>
+            <ListItemText primary="Home" />
+          </ListItem>
+          <ListItem button component={Link} to="/about" onClick={handleToggleDrawer}>
+            <ListItemText primary="About Me" />
+          </ListItem>
+          <ListItem button component={Link} to="/resume" onClick={handleToggleDrawer}>
+            <ListItemText primary="Resume" />
+          </ListItem>
         </List>
       </Drawer>
     </>
