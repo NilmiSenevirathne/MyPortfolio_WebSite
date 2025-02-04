@@ -1,38 +1,8 @@
+import { AppBar, Toolbar, Typography,Button } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import {FaBars,FaReact} from 'react-icons/fa';
-import {Link} from 'react-router-dom';
-import {HiX} from 'react-icons/hi';
-import './styles.scss'
-
-const data = [
-    {
-        label : 'HOME',
-        to: '/'
-    },
-    {
-        label : 'ABOUT ME',
-        to: '/about'
-    },
-    {
-        label : 'RESUME',
-        to: '/resume'
-    },
-    {
-        label : 'PORTFOLIO',
-        to: '/portfolio'
-    },
-    {
-        label : 'SKILLS',
-        to: '/skills'
-    },
-    {
-        label : 'CONTACT',
-        to: '/contact'
-    }
 
 
-]
 
 const Navbar = () =>{
 
@@ -43,36 +13,22 @@ const Navbar = () =>{
     }
 
     return(
-        <div>
-            <nav className="navbar">
-                <div className="navbar-container">
-                    <Link to={'/'} className="navbar-container-logo">
-                        <FaReact size={30}/>
-                    </Link>
+       <AppBar position="sticky" sx={{background: '#1c1c1c'}}>
+            <Toolbar>
+                <Typography variant="h4" sx={{flexGrow: 1, fontWeight: "bold"}}>
+                    Ama Senevirathne | Portfolio
+                </Typography>
 
-                </div>
-                <ul className="navbar-container-menu">
-                    {
-                       data.map((item,key) => (
-                        <li key={key} className="navbar-container-menu-item">
-                               <Link className="navbar-container-menu-item-links" to={item.to}>
-                                   {item.label}
-                               </Link>
-                        </li>
-                       ))
-                    }
-                </ul>
-                <div className="nav-icon" onClick={handleToggleIcon}>  
-                    {
-                        toggleIcon ? <HiX/> :<FaBars size={30}/>
-                    }
+                 <Button color="inherit" sx={{ fontSize: "1.5rem", p: 2 }}>Home</Button>
+                 <Button color="inherit" sx={{ fontSize: "1.5rem", p: 2 }}>About Me</Button>
+                 <Button color="inherit" sx={{ fontSize: "1.5rem", p: 2 }}>Services</Button>
+                 <Button color="inherit" sx={{ fontSize: "1.5rem", p: 2 }}>Portfolio</Button>
+                 <Button color="inherit" sx={{ fontSize: "1.5rem", p: 2 }}>Contact Me</Button>
+                 
 
-                </div>
+            </Toolbar>
 
-
-            </nav>
-
-        </div>
+       </AppBar>
     )
 }
 export default Navbar;
