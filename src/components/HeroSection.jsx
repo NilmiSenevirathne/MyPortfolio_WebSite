@@ -38,7 +38,7 @@ const HeroSection = () => {
         <Typography variant="h2" fontWeight="bold">
           Ama Senevirathne
         </Typography>
-        <Typography variant="h5">BICT Undergraduate | Full Stack Developer</Typography>
+        <Typography variant="h5">BICT Undergraduate | UOR | Full Stack Developer</Typography>
       </Box>
     );
   };
