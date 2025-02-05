@@ -20,6 +20,8 @@ const Navbar = () => {
             <Button component={Link} to="/" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>Home</Button>
             <Button component={Link} to="/about" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>About Me</Button>
             <Button component={Link} to="/resume" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>Resume</Button>
+            <Button component={Link} to="/resume" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}></Button>
+
           </Box>
 
           {/* Mobile Menu Button */}
