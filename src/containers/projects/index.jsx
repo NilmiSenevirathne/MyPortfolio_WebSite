@@ -38,7 +38,7 @@ const Projects = () => {
       sx={{
         position: " ",
         minHeight: "100vh",
-        backgroundImage: "url('/images/background.jpg')", // Replace with your background image path
+        backgroundImage: "url('/images/background.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",

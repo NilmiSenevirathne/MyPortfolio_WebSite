@@ -5,6 +5,7 @@ import HeroSection from "../src/components/HeroSection";
 import AboutMe from "../src/containers/about/index";
 import Resume from "../src/containers/resume/index";
 import Projects from '../src/containers/projects/index'
+import Contact from "./containers/contact/index";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/about" element={<AboutMe />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+
       </Routes>
     </Container>
   </>
