@@ -21,6 +21,8 @@ const Navbar = () => {
             <Button component={Link} to="/about" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>About Me</Button>
             <Button component={Link} to="/resume" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>Resume</Button>
             <Button component={Link} to="/projects" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>Projects</Button>
+            <Button component={Link} to="/contact" color="inherit" sx={{ fontSize: "1.2rem", mx: 1.5 }}>Contact Me</Button>
+
 
           </Box>
 
@@ -42,6 +44,12 @@ const Navbar = () => {
           </ListItem>
           <ListItem button component={Link} to="/resume" onClick={handleToggleDrawer}>
             <ListItemText primary="Resume" />
+          </ListItem>
+          <ListItem button component={Link} to="/projects" onClick={handleToggleDrawer}>
+            <ListItemText primary="Projects" />
+          </ListItem>
+          <ListItem button component={Link} to="/contact" onClick={handleToggleDrawer}>
+            <ListItemText primary="Contact Me" />
           </ListItem>
         </List>
       </Drawer>
