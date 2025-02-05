@@ -4,17 +4,6 @@ import { motion } from "framer-motion";
 
 const AboutMe = () => {
 
- // Function to handle CV download
- const handleDownloadCV = () => {
-  const cvPath = "/images/J.M.N.A. Senevirathne - SE.pdf"; // Place your PDF in the "public/cv" folder
-  const link = document.createElement("a");
-  link.href = cvPath;
-  link.download = "J.M.N.A. Senevirathne - SE.pdf"; // Set the file name
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-
   return (
     <Box
       sx={{
@@ -103,9 +92,7 @@ const AboutMe = () => {
               <Button variant="contained" color="warning" sx={{ mr: 2 }}>
                 Hire Me
               </Button>
-              <Button variant="contained" color="secondary" onClick={handleDownloadCV}>
-                Download CV
-              </Button>
+              
             </Box>
           </motion.div>
         </Grid>
