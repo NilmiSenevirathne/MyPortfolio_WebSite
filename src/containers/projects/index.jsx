@@ -8,28 +8,27 @@ const Projects = () => {
       id: 1,
       title: 'Tools Management System',
       description: 'The Tools Management System you developed for Dilum BMK Engineers is designed to manage and track various tools used by the company.It helps with efficient tracking, storing, and assigning tools to different employees or departments. The system likely features functionalities such as adding, editing, and deleting tools, tracking their availability and usage, and ensuring tools are appropriately assigned to users or projects. It also supports the generation of reports and provides an overview of the companys tool inventory, helping with resource management and ensuring no tools are lost or misplaced.',
-      image: '/images/toolsmgt.png', 
+      image: '/images/toolsmgt.png',
+      githubLink: 'https://github.com/NilmiSenevirathne/ToolManagementSystem-Group02--BackEnd' 
+
 
     },
     {
       id: 2,
       title: 'School Management System',
-      description: 'This is the description of Project 2.',
-      image: '/images/project2.jpg', // Replace with your project image path
-    },
+      description: 'The School Management System is a web application built using React for the frontend and Laravel for the backend, designed to manage various school administrative tasks. It leverages advanced database concepts such as multi-table joins, stored procedures, and normalization to ensure efficient data management. The system allows administrators, teachers, and students to manage attendance, grades, schedules, and user roles with secure login and role-based access control. With its user-friendly interface and scalable architecture, it aims to streamline school operations and improve overall efficiency.',
+      image: '/images/scl1.png',
+      githubLink:'https://github.com/NilmiSenevirathne/School-Management-System'
+    },  
     {
       id: 3,
       title: 'Java Based Inventory Management System',
       description: 'Java Inventory Management System: A user-friendly desktop application developed in Java with JavaFX, this Java GUI project facilitates efficient buying and selling of goods. It features robust report generation, invoice creation, and serves as a comprehensive solution for desktop-based inventory management.Technologies used:JavaFX,CSS,MySQL.',
-      image: '/images/inventory.jpg', // Replace with your project image path
+      image: '/images/inventory.jpg', 
+      githubLink: 'https://github.com/Randil-Hasanga/Java-Based-Inventory-Management-System' 
     },
 
-    {
-        id: 4,
-        title: 'Sathmaga Educational Management System',
-        description: 'This is the description of Project 3.',
-      image: '/images/project3.jpg', // Replace with your project image path
-    }
+    
       
     
   ];
@@ -37,7 +36,7 @@ const Projects = () => {
   return (
     <Box
       sx={{
-        position: "relative",
+        position: " ",
         minHeight: "100vh",
         backgroundImage: "url('/images/background.jpg')", // Replace with your background image path
         backgroundSize: "cover",
@@ -101,6 +100,11 @@ const Projects = () => {
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       {project.description}
+                    </Typography>
+                    <Typography>
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                       <button className="github-button" style={{ backgroundColor: 'purple', color: 'white' }}>View on GitHub</button>
+                    </a>
                     </Typography>
                   </CardContent>
                 </Card>
