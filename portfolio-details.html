@@ -48,9 +48,10 @@
         <img src="assets/img/ID photo.JPG" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Ama Senevirathne</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://github.com/NilmiSenevirathne" class="github"><i class="bx bxl-github"></i></a>
-          <a href="amasenevirathne2001@gmail.com" class="gmail"><i class="bx bxl-gmail"></i></a>
-          <a href="www.linkedin.com/in/amasenevirathne" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+          <a href="https://github.com/NilmiSenevirathne" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+          <a href="amasenevirathne2001@gmail.com" target="_blank" class="gmail"><i class="bx bxl-gmail"></i></a>
+          <a href="www.linkedin.com/in/amasenevirathne" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
@@ -59,8 +60,7 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
@@ -70,69 +70,38 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfoio Details</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Portfoio Details</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
-
         <div class="row gy-4">
-
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                </div>
-
+              <div class="swiper-wrapper align-items-center" id="project-images">
+                <!-- Images will be dynamically inserted here -->
               </div>
               <div class="swiper-pagination"></div>
             </div>
           </div>
-
+    
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
+              <h3>Project Information</h3>
               <ul>
-                <li><strong>Category</strong>: Web Application</li>
-                <li><strong>Client</strong>: Dilum BMK Engineers</li>
-                <li><strong>Project date</strong>: 25 December, 2024</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Category</strong>: <span id="project-category"></span></li>
+                <li><strong>Client</strong>: <span id="project-client"></span></li>
+                <li><strong>Project date</strong>: <span id="project-date"></span></li>
+                <li><strong>Project URL</strong>: <a id="project-url" href="#" target="_blank"></a></li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+              <h2 id="project-title"></h2>
+              <p id="project-description"></p>
             </div>
           </div>
-
         </div>
-
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </section>
+    
+   
 
   </main><!-- End #main -->
 

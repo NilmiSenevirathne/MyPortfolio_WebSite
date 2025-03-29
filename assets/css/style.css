@@ -85,8 +85,13 @@ h6 {
 #header .profile img {
   margin: 15px auto;
   display: block;
-  width: 120px;
-  border: 8px solid #2c2f3f;
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: cover;
+  border: 5px solid #2c2f3f;
+  border-radius: 50% !important;
+  overflow: hidden;
+  
 }
 
 #header .profile h1 {
@@ -96,7 +101,7 @@ h6 {
   font-weight: 600;
   -moz-text-align-last: center;
   text-align-last: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 #header .profile h1 a,
