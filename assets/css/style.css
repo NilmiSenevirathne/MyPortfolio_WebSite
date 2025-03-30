@@ -279,6 +279,9 @@ h6 {
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
+    background: url("../img/bg.avif") center center;
+    background-size: cover;
+    height: 90vh;
   }
 }
 
