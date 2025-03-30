@@ -70,12 +70,16 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background-image: url('assets/img/bg.avif');  background-size: cover; ">
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <!-- Remove the :before pseudo-element in CSS that might be adding the gray overlay -->
+    <img src="assets/img//bg.avif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;" alt="Background">
+    <!-- Optional: Keep a slight overlay for better text readability -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 13, 24, 0.3); z-index: -1;"></div>
     <div class="hero-container" data-aos="fade-in">
       <h1>J.M. Nilmi Ama Senevirathne</h1>
-      <p>I'm <span class="typed" data-typed-items=" BICT(Hons) Undergraduate UOR ,Full Stack Developer Intern ,Software Engineer Intern"></span></p>
+      <p>I'm <span class="typed" data-typed-items=" BICT(Hons) Undergraduate UOR ,Full Stack Developer Intern ,Front End Developer Intern"></span></p>
     </div>
-  </section><!-- End Hero -->
+  </section>
 
   <main id="main">
 
