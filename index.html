@@ -268,34 +268,34 @@
     </section><!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
+  
     <section id="portfolio" class="portfolio section-bg">
       <div class="container">
-    
         <div class="section-title">
           <h2>Projects</h2>
-          <p>Explore my latest projects in web and mobile development.</p>
+          <p>Explore my latest projects in web application development.</p>
         </div>
     
-        <div class="row" data-aos="fade-up">
+        <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Apps</li>
               <li data-filter=".filter-web">Web Applications</li>
               <li data-filter=".filter-card">Ongoing</li>
             </ul>
           </div>
         </div>
     
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-    
+        <div class="row portfolio-container">
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/Schoolmgt.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="javascript:void(0);" class="portfolio-lightbox" title="School Management System" onclick="openModal('schoolmgt')">
-                  <i class="bx bx-link"></i> More Details
-                </a>
+              <div class="portfolio-info">
+                <h4>School Management System</h4>
+                <p><strong>Client:</strong>Advanced Database Management Mini Project | UOR</p>
+                <p><strong>Date:</strong>Jul 2024 - Nov 2024 </p>
+                <p style="text-align: justify">a School Management System, leveraging React for the frontend and Laravel for the backend, with MySQL as the database. This project was part of our Database Management Systems coursework, where we implemented advanced database concepts such as indexes, views, stroed procedures, triggers to ensure efficient data handling and system performance.</p>
+                <a href="https://github.com/NilmiSenevirathne/School-Management-System" target="_blank" class="btn btn-primary position-relative" style="z-index: 10;">Github Link</a>
               </div>
             </div>
           </div>
@@ -303,133 +303,47 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/toolmgt.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="javascript:void(0);" class="portfolio-lightbox" title="Tool Management System" onclick="openModal('toolmgt')">
-                  <i class="bx bx-link"></i> More Details
-                </a>
+              <div class="portfolio-info">
+                <h4>Tools Management System</h4>
+                <p><strong>Client:</strong> Client Base 3<sup>rd</sup> year group Project for Dilum BMK Engineers</p>
+                <p><strong>Date:</strong> Jan 2024 - Jul 2024</p>
+                <p style="text-align: justify">
+                  React and Spring boot Based Tools Management System
+                  Tools Management System web application is the Client Based Project. This application provides a centralized platform to streamline operations, ensuring efficiency and accountability in tool management. By digitizing the control and monitoring of tools across various projects, this system eliminates the need for manual processes and enhances overall productivity.</p>
+                <a href="https://github.com/NilmiSenevirathne/ToolManagementSystem-Group02--FrontEnd" target="_blank" class="btn btn-primary position-relative" style="z-index: 10;">Github Link - Frontend</a>
+                <a href="https://github.com/NilmiSenevirathne/ToolManagementSystem-Group02--BackEnd" target="_blank" class="btn btn-primary position-relative" style="z-index: 10;">Github Link - Backend </a>
+
               </div>
             </div>
           </div>
-    
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/booknok.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="javascript:void(0);" class="portfolio-lightbox" title="BookNok App" onclick="openModal('booknok')">
-                  <i class="bx bx-link"></i> More Details
-                </a>
+              <div class="portfolio-info">
+                <h4>Java Based Inventory Management System</h4>
+                <p style="text-align: justify">Java Inventory Management System: A user-friendly desktop application developed in Java with JavaFX, this Java GUI project facilitates efficient buying and selling of goods. It features robust report generation, invoice creation, and serves as a comprehensive solution for desktop-based inventory management.
+                   <br/>
+                   Technologies used:
+                       JavaFX
+                       CSS
+                       MySQL
+                </p>
+                <a href="https://github.com/Randil-Hasanga/Java-Based-Inventory-Management-System" target="_blank" class="btn btn-primary position-relative" style="z-index: 10;">Github Link</a>
               </div>
             </div>
           </div>
-    
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="javascript:void(0);" class="portfolio-lightbox" title="Ongoing Project" onclick="openModal('ongoing')">
-                  <i class="bx bx-link"></i> More Details
-                </a>
-              </div>
-            </div>
-          </div> -->
-    
+
         </div>
       </div>
     </section>
-    
-    <!-- Modal -->
-    <div id="projectModal" class="modal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal-title"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p id="modal-category"></p>
-            <p id="modal-client"></p>
-            <p id="modal-date"></p>
-            <p id="modal-description"></p>
-            <a id="modal-url" href="#" target="_blank">View Project</a>
-            <div id="modal-images" class="swiper-container">
-              <!-- Dynamically populated images -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <script>
-      const projects = {
-        schoolmgt: {
-          category: "Web Application",
-          client: "Sumangala College",
-          date: "10 January, 2025",
-          url: "https://example.com/schoolmgt",
-          title: "School Management System",
-          description: "A complete school management solution...",
-          images: ["assets/img/portfolio/Schoolmgt.jpeg"]
-        },
-        toolmgt: {
-          category: "Web Application",
-          client: "Dilum BMK Engineers",
-          date: "25 December, 2024",
-          url: "https://example.com/toolmgt",
-          title: "Tool Management System",
-          description: "An efficient tool tracking system...",
-          images: ["assets/img/portfolio/toolmgt.jpeg"]
-        },
-        booknok: {
-          category: "Mobile App",
-          client: "BookNok Publishers",
-          date: "15 March, 2025",
-          url: "https://example.com/booknok",
-          title: "BookNok App",
-          description: "A digital library app with personalized recommendations...",
-          images: ["assets/img/portfolio/booknok.jpeg"]
-        },
-        ongoing: {
-          category: "Ongoing Project",
-          client: "Personal Research",
-          date: "In Progress",
-          url: "#",
-          title: "AI-Powered Research Project",
-          description: "An advanced AI-driven research tool...",
-          images: ["assets/img/portfolio/portfolio-4.jpg"]
-        }
-      };
-    
-      function openModal(projectKey) {
-        const project = projects[projectKey];
-        if (!project) return;
-    
-        // Populate the modal with project details
-        document.getElementById("modal-title").textContent = project.title;
-        document.getElementById("modal-category").textContent = `Category: ${project.category}`;
-        document.getElementById("modal-client").textContent = `Client: ${project.client}`;
-        document.getElementById("modal-date").textContent = `Date: ${project.date}`;
-        document.getElementById("modal-description").textContent = project.description;
-        document.getElementById("modal-url").href = project.url;
-        document.getElementById("modal-url").textContent = `View Project - ${project.title}`;
-    
-        // Clear and add dynamic images
-        const imageContainer = document.getElementById("modal-images");
-        imageContainer.innerHTML = project.images
-          .map(img => `<div class="swiper-slide"><img src="${img}" alt="Project Image" class="img-fluid"></div>`)
-          .join("");
-    
-        // Show the modal
-        const modal = new bootstrap.Modal(document.getElementById('projectModal'));
-        modal.show();
-      }
-    </script>
-    
-    <!-- Bootstrap 5 JS for Modal functionality -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <!-- end of the portfolio section -->
 
-    
-    
+
+<!-- Bootstrap and Dependencies -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- End Portfolio Section -->
 
     <!-- ======= Services Section ======= -->

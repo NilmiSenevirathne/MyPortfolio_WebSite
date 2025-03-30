@@ -682,6 +682,7 @@ section {
 }
 
 .portfolio-details .portfolio-description p {
+  align-self: start;
   padding: 0;
 }
 
