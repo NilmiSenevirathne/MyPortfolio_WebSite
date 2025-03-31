@@ -1,9 +1,20 @@
 <?php
+// Set CORS headers for local development
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST");
+
 // Collect form data
-$name = $_POST['name'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
+$name = isset($_POST['name']) ? $_POST['name'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$subject = isset($_POST['subject']) ? $_POST['subject'] : '';
+$message = isset($_POST['message']) ? $_POST['message'] : '';
+
+// Check if required fields are present
+if (empty($name) || empty($email) || empty($message)) {
+    echo "Required fields are missing";
+    exit;
+}
 
 // Validate email format
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

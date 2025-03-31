@@ -1,85 +1,92 @@
-/**
-* PHP Email Form Validation - v3.4
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
-(function () {
-  "use strict";
-
-  let forms = document.querySelectorAll('.php-email-form');
-
-  forms.forEach( function(e) {
-    e.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      let thisForm = this;
-
-      let action = thisForm.getAttribute('action');
-      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
-      if( ! action ) {
-        displayError(thisForm, 'The form action property is not set!')
-        return;
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contactForm');
+  
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Show loading indicator
+    const loading = form.querySelector('.loading');
+    const sentMessage = form.querySelector('.sent-message');
+    const errorMessage = form.querySelector('.error-message');
+    
+    loading.style.display = 'block';
+    sentMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+    // Option 1: Use FormData and send directly to Web3Forms
+    const formData = new FormData(form);
+    
+    // Web3Forms supports CORS, but needs additional configuration for local development
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+      mode: 'cors', // Important: this must be 'cors', not 'no-cors'
+      headers: {
+        'Accept': 'application/json'
       }
-      thisForm.querySelector('.loading').classList.add('d-block');
-      thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
-
-      let formData = new FormData( thisForm );
-
-      if ( recaptcha ) {
-        if(typeof grecaptcha !== "undefined" ) {
-          grecaptcha.ready(function() {
-            try {
-              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-              .then(token => {
-                formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, formData);
-              })
-            } catch(error) {
-              displayError(thisForm, error)
-            }
-          });
-        } else {
-          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
-        }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok: ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      loading.style.display = 'none';
+      
+      if (data.success) {
+        // Success - show the success message
+        sentMessage.style.display = 'block';
+        form.reset();
       } else {
-        php_email_form_submit(thisForm, action, formData);
+        // Show specific error from Web3Forms
+        errorMessage.textContent = data.message || "Form submission failed. Please try again.";
+        errorMessage.style.display = 'block';
+      }
+    })
+    .catch(error => {
+      loading.style.display = 'none';
+      
+      // For local development, use the PHP fallback
+      if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
+        sendToLocalPHP(form);
+      } else {
+        errorMessage.textContent = "An error occurred. Please try again later.";
+        errorMessage.style.display = 'block';
+        console.error('Error:', error);
       }
     });
   });
-
-  function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
+  
+  // Function to handle local development with PHP
+  function sendToLocalPHP(form) {
+    const formData = new FormData(form);
+    const loading = form.querySelector('.loading');
+    const sentMessage = form.querySelector('.sent-message');
+    const errorMessage = form.querySelector('.error-message');
+    
+    // Send to your local PHP script instead
+    fetch('process_form.php', {
       method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+      body: formData
     })
-    .then(response => {
-      if( response.ok ) {
-        return response.text()
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-      }
-    })
+    .then(response => response.text())
     .then(data => {
-      thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
+      loading.style.display = 'none';
+      
+      if (data.trim() === 'OK') {
+        sentMessage.style.display = 'block';
+        form.reset();
       } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+        errorMessage.textContent = data || "Form submission failed. Please try again.";
+        errorMessage.style.display = 'block';
       }
     })
-    .catch((error) => {
-      displayError(thisForm, error);
+    .catch(error => {
+      loading.style.display = 'none';
+      errorMessage.textContent = "An error occurred with the local PHP handler.";
+      errorMessage.style.display = 'block';
+      console.error('PHP Error:', error);
     });
   }
-
-  function displayError(thisForm, error) {
-    thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.error-message').innerHTML = error;
-    thisForm.querySelector('.error-message').classList.add('d-block');
-  }
-
-})();
+});
